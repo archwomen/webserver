@@ -1,0 +1,15 @@
+# http://gunicorn.org/
+# https://docs.djangoproject.com/en/1.4/howto/deployment/wsgi/gunicorn/
+# http://mezzanine.jupo.org/docs/
+
+[Unit]
+Description=Gunicorn test
+
+[Service]
+ExecStart=/usr/bin/gunicorn test:application
+User=http
+Group=http
+WorkingDirectory=/srv/python/pytest
+
+[Install]
+WantedBy=multi-user.target
