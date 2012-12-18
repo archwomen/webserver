@@ -5,7 +5,7 @@ preload_app true
 timeout 60
 worker_processes 4
 listen 4000
-stderr_path('/var/log/unicorn.log')
+stderr_path('/var/log/unicorn/unicorn.log')
 
 GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
 
@@ -16,5 +16,5 @@ after_fork do |server, worker|
     server.listen(addr, :tries => -1, :delay => -1, :backlog => 128)
 
     # Drop priveleges if running as root
-    worker.user('nobody', 'nobody') if Process.euid == 0
+    worker.user('http', 'http') if Process.euid == 0
 end
