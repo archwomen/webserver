@@ -1,0 +1,13 @@
+[Unit]
+Description=Unicorn application server
+After=network.target
+
+[Service]
+Type=forking
+User=http
+Group=http
+ExecStart=/usr/bin/unicorn -D -E production -c /etc/unicorn/redmine.ru
+
+[Install]
+WantedBy=multi-user.target
+
