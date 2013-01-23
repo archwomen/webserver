@@ -3,7 +3,7 @@ pid "/tmp/redmine.pid"
 
 preload_app true
 timeout 60
-worker_processes 4
+worker_processes 2
 listen 4000
 stderr_path('/var/log/unicorn/unicorn.log')
 
