@@ -1,0 +1,9 @@
+lighttpd
+========
+
+Make symlinks,
+  /etc/lighttpd/lighttpd.conf -> /var/git/webserver.wrk/lighttpd/lighttpd.conf
+  /etc/lighttpd/conf.d -> /var/git/webserver.wrk/lighttpd/conf.d
+
+There is no symlink /etc/lighttpd -> /var/git/webserver.wrk/lighttpd
+because otherwise lighttpd.pac{new,save} would be overwritten on push/deploy.
