@@ -5,7 +5,8 @@ After=network.target
 [Service]
 User=http
 Group=http
-ExecStart=/usr/bin/unicorn -E production -c /etc/unicorn/redmine.ru
+ExecStart=/usr/local/share/ruby-bundler-stuff/bin/unicorn -E production -c /etc/unicorn/redmine.ru
+Environment=GEM_HOME=/usr/local/share/ruby-bundler-stuff
 
 [Install]
 WantedBy=multi-user.target
